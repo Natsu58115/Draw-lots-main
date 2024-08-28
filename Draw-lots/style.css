@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 70px); /* Adjusted for bigger squares */
+    grid-gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.square {
+    width: 70px; /* Bigger square */
+    height: 70px; /* Bigger square */
+    background-color: #007BFF; /* Blue background */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 20px; /* Adjusted for bigger text inside the square */
+    opacity: 1; /* Default opacity */
+    transition: opacity 0.5s ease-in; /* Fade-in effect for squares */
+}
+
+.square.revealed {
+    opacity: 1; /* Fully visible after fading in */
+}
+
+.try-again {
+    background-color: red;
+    color: white;
+}
+
+.revealed-prize {
+    background-color: green;
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px;
+    text-align: center;
+}
+
+li {
+    margin: 5px;
+    font-size: 36px; /* Large text outside the squares */
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+li.revealed-prize {
+    color: red;
+    text-decoration: line-through;
+    background: none;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+/* Revealed text styling */
+#revealed-text {
+    font-size: 48px;
+    font-weight: bold;
+    color: #333;
+    margin: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in; /* Fade-in effect for text */
+}
+
+#revealed-text.show {
+    opacity: 1; /* Visible when text is shown */
+}
+
+#revealed-text.hide {
+    opacity: 0; /* Hidden when text fades out */
+}
