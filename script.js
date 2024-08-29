@@ -12,7 +12,7 @@ function addJackpot() {
         displayJackpots();
         prizeInput.value = ''; // Clear the input
     } else {
-        alert('Please enter a valid jackpot.');
+        alert('ใส่รางวัลให้ถูกต้อง');
     }
 }
 
@@ -25,7 +25,7 @@ function deletePrizes() {
     jackpots = []; // Clear the prize array
     document.getElementById("jackpot-list").innerHTML = ''; // Clear the prize list
     document.getElementById("grid-container").innerHTML = ''; // Clear the grid
-    alert('Prizes have been deleted. Add new ones to play.');
+    alert('รางวัลถูกลบ เริ่มต้นเกมใหม่');
 }
 
 function initializeGame() {
@@ -33,7 +33,7 @@ function initializeGame() {
     totalSquares = parseInt(squareInput.value) || 140; // Get the number of squares or default to 140
 
     if (jackpots.length === 0) {
-        alert('Please add some jackpots first.');
+        alert('กรุณาใส่รางวัลก่อนเริ่มเกม');
         return;
     }
 
@@ -90,11 +90,11 @@ function revealSquare(square) {
         // Show the revealed prize in large text
         showRevealedText(prize);
     } else {
-        square.textContent = "Try Again";
+        square.textContent = "ท่านไม่ถูกรางวัล";
         square.classList.add("try-again");
 
         // Show "Try Again" in large text
-        showRevealedText("Try Again");
+        showRevealedText("ท่านไม่ถูกรางวัล");
     }
 
     // Trigger the fade-in effect for the square
